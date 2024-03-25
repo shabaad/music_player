@@ -78,19 +78,22 @@ class _PlaynowScreenState extends State<PlaynowScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-                child: Container(
-                  height: 263,
-                  width: 263,
-                  child: QueryArtworkWidget(
-                    id: widget.songData[playerController.playIndex].id,
-                    artworkQuality: FilterQuality.high,
-                    type: ArtworkType.AUDIO,
-                    keepOldArtwork: true,
-                    artworkBorder: BorderRadius.circular(10),
-                    nullArtworkWidget: Image.asset(ConstantImage.mainLogoPng),
-                  ),
-                )),
+            Hero(
+              tag: widget.songData[playerController.playIndex].displayName,
+              child: Center(
+                  child: Container(
+                height: 263,
+                width: 263,
+                child: QueryArtworkWidget(
+                  id: widget.songData[playerController.playIndex].id,
+                  artworkQuality: FilterQuality.high,
+                  type: ArtworkType.AUDIO,
+                  keepOldArtwork: true,
+                  artworkBorder: BorderRadius.circular(10),
+                  nullArtworkWidget: Image.asset(ConstantImage.mainLogoPng),
+                ),
+              )),
+            ),
             kHeight10,
             kHeight10,
             Center(

@@ -13,54 +13,57 @@ class SongListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
-      height: 80,
-      width: screenWidth,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 60,
-              width: 60,
-              child: image,
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Flexible(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      songTitle,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                          color: ConstantColors.themeWhiteColor, fontSize: 18),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      artist,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                          color: ConstantColors.themeWhiteColor, fontSize: 14),
-                    ),
-                  ],
+    return Hero(
+      tag: songTitle,
+      child: Container(
+        height: 80,
+        width: screenWidth,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 60,
+                width: 60,
+                child: image,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        songTitle,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: ConstantColors.themeWhiteColor, fontSize: 18),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Text(
+                        artist,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: ConstantColors.themeWhiteColor, fontSize: 14),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            // Icon(
-            //   Icons.more_vert,
-            //   color: ConstantColors.themeWhiteColor,
-            // )
-          ],
+              // Icon(
+              //   Icons.more_vert,
+              //   color: ConstantColors.themeWhiteColor,
+              // )
+            ],
+          ),
         ),
       ),
     );
